@@ -1,0 +1,63 @@
+        body {
+            font-family: Arial, sans-serif;
+            padding: 20px;
+        }
+        .container-table {
+            border: 2px solid #363c52;
+            border-radius: 8px;
+            padding: 20px;
+            max-width: 100%;
+            /* margin: 0 auto; */
+            margin-top: -20px;
+        }
+        .button-container {
+            margin-bottom: 20px;
+        }
+        .btn {
+            background-color: #0d6efd;
+            color: white;
+            border: none;
+            padding: 8px 16px;
+            border-radius: 4px;
+            cursor: pointer;
+            margin-right: 10px;
+        }
+        .search-container {
+            margin-bottom: 20px;
+            text-align: right;
+        }
+        .search-container input {
+            padding: 6px;
+            width: 200px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+        th, td {
+            padding: 12px;
+            text-align: left;
+            border: 1px solid #ddd;
+        }
+        th {
+            background-color: #f2f2f2;
+        }
+        .action-btn {
+            background: none;
+            border: none;
+            cursor: pointer;
+            margin-right: 5px;
+        }
+        .action-btn img {
+            width: 16px;
+            height: 16px;
+        }
+        input {
+            width: 100%;
+            padding: 8px;
+            margin-top: 5px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
