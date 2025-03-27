@@ -31,5 +31,6 @@ Route::group(['middleware' => ['auth']], function () {
     Route::put('/kriteria-warga/{idWarga}/{batch}', [KriteriaWargaController::class, 'update'])->name('kriteria-warga-update');
     Route::delete('/kriteria-warga/{idWarga}/{batch}', [KriteriaWargaController::class, 'destroy'])->name('kriteria-warga-delete');
     Route::get('/perangkingan', [PerangkinganController::class, 'index'])->name('perangkingan');
+    Route::get('/perhitungan', [PerangkinganController::class, 'indexPerhitungan'])->name('perhitungan');
     Route::resource('/operator', UserController::class)->names('operator');
 });

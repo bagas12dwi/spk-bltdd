@@ -10,6 +10,7 @@
 
         <div class="container-table">
             <button onclick="printTable()" class="btn btn-primary mb-3">Cetak PDF</button>
+            <a href="{{ route('perhitungan') }}" class="btn btn-primary mb-3">Lihat Perhitungan</a>
             <div id="printArea">
                 <table>
                     <thead>
