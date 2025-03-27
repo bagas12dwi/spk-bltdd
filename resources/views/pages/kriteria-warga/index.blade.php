@@ -51,13 +51,17 @@
                                 @endforeach
 
                                 <td>
-                                    <a href="{{ route('kriteria-warga.edit', $idWarga) }}" class="action-btn">✏️</a>
-                                    <form action="{{ route('kriteria-warga.destroy', $idWarga) }}" method="POST"
-                                        style="display:inline;">
+                                    <a href="{{ route('kriteria-warga-edit', ['idWarga' => $idWarga, 'batch' => $kriteriaGroup[0]->batch]) }}"
+                                        class="action-btn">✏️</a>
+                                    <a href="{{ route('kriteria-warga-delete', ['idWarga' => $idWarga, 'batch' => $kriteriaGroup[0]->batch]) }}"
+                                        class="action-btn" data-confirm-delete="true">🗑️</a>
+                                    {{-- <form
+                                        action="{{ route('kriteria-warga-delete', ['idWarga' => $idWarga, 'batch' => $kriteriaGroup[0]->batch]) }}"
+                                        method="POST" style="display:inline;">
                                         @csrf
                                         @method('DELETE')
                                         <button type="submit" class="action-btn">🗑️</button>
-                                    </form>
+                                    </form> --}}
                                 </td>
                             </tr>
                         @endforeach

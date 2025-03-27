@@ -9,18 +9,28 @@ use Illuminate\Http\Request;
 
 class PerangkinganController extends Controller
 {
-    public function index()
+    public function index(Request $request)
     {
         $kriteriaList = Kriteria::all();
 
-        $kriteriaWarga = KriteriaWarga::with(['warga', 'kriteria', 'subkriteria'])
-            ->get()
-            ->groupBy(['batch', 'id_data_warga']);
+        $kriteriaWargaQuery = KriteriaWarga::with(['warga', 'kriteria', 'subkriteria']);
+
+        // Apply search before fetching data
+        if ($request->has('search')) {
+            $search = $request->input('search');
+            $kriteriaWargaQuery->whereHas('warga', function ($q) use ($search) {
+                $q->where('nama', 'like', "%{$search}%");
+            });
+        }
+
+        // Fetch filtered data and group it
+        $kriteriaWarga = $kriteriaWargaQuery->get()->groupBy(['batch', 'id_data_warga']);
 
         // Fetch pairwise comparisons and format them in an associative array
         $comparisons = BobotKriteria::all()->keyBy(function ($item) {
             return $item->kriteria_id_1 . '-' . $item->kriteria_id_2;
         });
+
         $columnSums = [];
 
         // Compute column sums for normalization
@@ -40,6 +50,7 @@ class PerangkinganController extends Controller
             }
             $columnSums[$col->id] = $sum;
         }
+
         $rowSums = [];
         foreach ($kriteriaList as $row) {
             $sum = 0;
@@ -57,7 +68,8 @@ class PerangkinganController extends Controller
             'kriteriaList' => $kriteriaList,
             'kriteriaWarga' => $kriteriaWarga,
             'rowSums' => $rowSums,
-            'countKriteria' => $kriteriaList->count()
+            'countKriteria' => $kriteriaList->count(),
+            'search' => $request->input('search')
         ]);
     }
 }

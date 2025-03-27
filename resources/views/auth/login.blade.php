@@ -8,9 +8,10 @@
         <div class="login-right">
             <h2>Sing In</h2>
             <p>Enter your email and password to sign in</p>
-            <form>
-                <input type="email" class="form-control" placeholder="Email">
-                <input type="password" class="form-control" placeholder="Password">
+            <form action="{{ route('login.post') }}" method="POST">
+                @csrf
+                <input type="email" class="form-control" name="email" placeholder="Email">
+                <input type="password" class="form-control" name="password" placeholder="Password">
                 <button type="submit" class="btn btn-sign">Sign In</button>
             </form>
         </div>
