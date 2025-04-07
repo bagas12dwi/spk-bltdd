@@ -16,7 +16,6 @@
                     <label for="nama" class="form-label">Nama Kriteria :</label>
                     <input type="text" class="form-control" name="nama_kriteria" id="nama_kriteria"
                         value="{{ old('nama_kriteria', $data->nama_kriteria ?? '') }}" placeholder="Masukkan Nama" />
-                    <small class="form-text text-muted">Masukkan Nama Kriteria</small>
                 </div>
 
                 <div class="button-container mt-3">

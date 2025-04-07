@@ -4,9 +4,8 @@
     <div class="container">
         <div class="page-inner">
             @include('components.title', [
-                'title' => 'Data Suibkriteria',
+                'title' => 'Hasil Perhitungan AHP',
             ])
-
         </div>
         <div class="container-table">
             <!-- Matriks Perbandingan Berpasangan -->
@@ -95,7 +94,6 @@
                 </table>
             </div>
         </div>
-
         <br><br>
         <div class="container-table">
             <!-- Weighted Sum Vector Matrix -->
@@ -134,8 +132,6 @@
                 </table>
             </div>
         </div>
-
-
         <br><br>
         <div class="container-table">
             <!-- Konsistensi Rasio -->

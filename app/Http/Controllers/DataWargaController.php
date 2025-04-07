@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\DataWarga;
 use App\Http\Requests\StoreDataWargaRequest;
 use App\Http\Requests\UpdateDataWargaRequest;
+use Barryvdh\DomPDF\Facade\Pdf;
 use Illuminate\Http\Request;
 use RealRashid\SweetAlert\Facades\Alert;
 
@@ -115,5 +116,12 @@ class DataWargaController extends Controller
         Alert::success('Berhasil', 'Data Warga berhasil dihapus!');
 
         return redirect()->route('warga.index');
+    }
+
+    public function cetak()
+    {
+        $dataWarga = DataWarga::all();
+        $pdf = PDF::loadView('pages.warga.cetak', compact('dataWarga'));
+        return $pdf->stream('data_warga.pdf');
     }
 }

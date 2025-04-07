@@ -5,7 +5,7 @@
          <div class="logo-header" data-background-color="dark">
              <a href="index.php" class="logo">
                  <img src="{{ URL::asset('assets/img/kaiadmin/logo_light.svg') }} " alt="navbar brand" class="navbar-brand"
-                     height="20" />
+                     height="60" />
              </a>
              <div class="nav-toggle">
                  <button class="btn btn-toggle toggle-sidebar">

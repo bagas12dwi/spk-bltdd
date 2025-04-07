@@ -33,4 +33,5 @@ Route::group(['middleware' => ['auth']], function () {
     Route::get('/perangkingan', [PerangkinganController::class, 'index'])->name('perangkingan');
     Route::get('/perhitungan', [PerangkinganController::class, 'indexPerhitungan'])->name('perhitungan');
     Route::resource('/operator', UserController::class)->names('operator');
+    Route::get('/cetak', [DataWargaController::class, 'cetak'])->name('warga.cetak');
 });

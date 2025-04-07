@@ -12,10 +12,26 @@ class HasilPerhitunganController extends Controller
     {
         $kriterias = Kriteria::all();
 
+        // Ensure that we proceed only if there are criteria
+        if ($kriterias->isEmpty()) {
+            return view('pages.hasil-perhitungan.nodata', [
+                'kriterias' => [],
+                'comparisons' => [],
+                'columnSums' => [],
+                'rowSums' => [],
+                'priorityVector' => [],
+                'weightedSumVector' => [],
+                'lambdaMax' => null,
+                'CI' => null,
+                'CR' => null
+            ])->with('error', 'No criteria available for calculation.');
+        }
+
         // Fetch pairwise comparisons and format them in an associative array
         $comparisons = BobotKriteria::all()->keyBy(function ($item) {
             return $item->kriteria_id_1 . '-' . $item->kriteria_id_2;
         });
+
         $columnSums = [];
 
         // Compute column sums for normalization
@@ -35,6 +51,7 @@ class HasilPerhitunganController extends Controller
             }
             $columnSums[$col->id] = $sum;
         }
+
         $rowSums = [];
         foreach ($kriterias as $row) {
             $sum = 0;
@@ -64,12 +81,12 @@ class HasilPerhitunganController extends Controller
                 $key = $row->id . '-' . $col->id;
                 $inverseKey = $col->id . '-' . $row->id;
                 $pairwiseValue = $comparisons[$key]->bobot ?? (isset($comparisons[$inverseKey]) ? round(1 / $comparisons[$inverseKey]->bobot, 3) : 1);
-                $normalizedValue = $pairwiseValue / $columnSums[$col->id];
                 $wsv += $pairwiseValue * $priorityVector[$col->id]; // Multiply by Priority Vector
             }
             $weightedSumVector[$row->id] = $wsv;
             $lambdaSum += $wsv / $priorityVector[$row->id];
         }
+
         // Calculate Lambda Max, CI, and CR
         $lambdaMax = $lambdaSum / $numCriteria;
         $CI = ($lambdaMax - $numCriteria) / ($numCriteria - 1);
@@ -79,6 +96,7 @@ class HasilPerhitunganController extends Controller
         $RI = $numCriteria <= 10 ? $RI_values[$numCriteria] : 1.49;
 
         $CR = $RI == 0 ? 0 : $CI / $RI;
+
         return view('pages.hasil-perhitungan.index', [
             'kriterias' => $kriterias,
             'comparisons' => $comparisons,

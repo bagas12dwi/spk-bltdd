@@ -17,7 +17,6 @@
                     <label for="nama_subkriteria" class="form-label">Nama subkriteria :</label>
                     <input type="text" class="form-control" name="nama_subkriteria" id="nama_subkriteria"
                         value="{{ old('nama_subkriteria', $data->nama_subkriteria ?? '') }}" placeholder="Masukkan Nama" />
-                    <small class="form-text text-muted">Masukkan Nama subkriteria</small>
                 </div>
 
                 <div class="mb-3">
@@ -38,7 +37,6 @@
                     <label for="bobot" class="form-label">Bobot :</label>
                     <input type="number" class="form-control" name="bobot" id="bobot"
                         value="{{ old('bobot', $data->bobot ?? '') }}" placeholder="Masukkan Bobot" />
-                    <small class="form-text text-muted">Masukkan Bobot</small>
                 </div>
 
 

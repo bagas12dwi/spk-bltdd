@@ -11,7 +11,7 @@
         <div class="container-table">
             <div class="button-container">
                 <a href="{{ route('kriteria-warga.create') }}">
-                    <button class="btn">Tambah Data</button>
+                    <button class="btn btn-primary">Tambah Data</button>
                 </a>
             </div>
 

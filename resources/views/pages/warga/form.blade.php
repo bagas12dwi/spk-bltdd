@@ -16,28 +16,24 @@
                     <label for="nama" class="form-label">Nama :</label>
                     <input type="text" class="form-control" name="nama" id="nama"
                         value="{{ old('nama', $data->nama ?? '') }}" placeholder="Masukkan Nama" />
-                    <small class="form-text text-muted">Masukkan Nama Lengkap</small>
                 </div>
 
                 <div class="mb-3">
                     <label for="nik" class="form-label">NIK :</label>
                     <input type="text" class="form-control" name="nik" id="nik"
                         value="{{ old('nik', $data->nik ?? '') }}" placeholder="Masukkan NIK" />
-                    <small class="form-text text-muted">Masukkan NIK</small>
                 </div>
 
                 <div class="mb-3">
                     <label for="tempat_lahir" class="form-label">Tempat Lahir</label>
                     <input type="text" class="form-control" name="tempat_lahir" id="tempat_lahir"
                         value="{{ old('tempat_lahir', $data->tempat_lahir ?? '') }}" placeholder="Masukkan Tempat Lahir" />
-                    <small class="form-text text-muted">Masukkan Tempat Lahir</small>
                 </div>
 
                 <div class="mb-3">
                     <label for="tanggal_lahir" class="form-label">Tanggal Lahir</label>
                     <input type="date" class="form-control" name="tanggal_lahir" id="tanggal_lahir"
                         value="{{ old('tanggal_lahir', $data->tanggal_lahir ?? '') }}" />
-                    <small class="form-text text-muted">Masukkan Tanggal Lahir</small>
                 </div>
 
                 <div class="mb-3">

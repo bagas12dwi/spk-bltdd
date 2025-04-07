@@ -17,7 +17,11 @@ class DataWargaFactory extends Factory
     public function definition(): array
     {
         return [
-            //
+            'nik' => $this->faker->unique()->numerify('##########'),
+            'nama' => $this->faker->name(),
+            'tempat_lahir' => $this->faker->city(),
+            'tanggal_lahir' => $this->faker->date(),
+            'alamat' => $this->faker->address(),
         ];
     }
 }
