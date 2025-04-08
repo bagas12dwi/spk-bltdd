@@ -34,4 +34,6 @@ Route::group(['middleware' => ['auth']], function () {
     Route::get('/perhitungan', [PerangkinganController::class, 'indexPerhitungan'])->name('perhitungan');
     Route::resource('/operator', UserController::class)->names('operator');
     Route::get('/cetak', [DataWargaController::class, 'cetak'])->name('warga.cetak');
+    Route::get('/ubah-password', [AuthController::class, 'ubahPassword'])->name('ubah-password');
+    Route::post('/ubah-password', [AuthController::class, 'ubahPasswordStore'])->name('ubah-password.store');
 });

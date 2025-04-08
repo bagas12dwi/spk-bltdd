@@ -52,7 +52,7 @@
 
                 <div class="button-container">
                     <button type="submit" class="btn btn-primary">{{ $idWarga != 0 ? 'Update' : 'Simpan' }}</button>
-                    <a href="{{ route('kriteria-warga.index') }}" type="reset" class="btn btn-primary">Batal</a>
+                    <a href="{{ route('kriteria-warga.index') }}" type="reset" class="btn btn-secondary">Batal</a>
                 </div>
             </form>
         </div>

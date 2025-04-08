@@ -4,7 +4,7 @@
     <div class="container">
         <div class="page-inner">
             @include('components.title', [
-                'title' => 'Data Suibkriteria',
+                'title' => 'Data Subkriteria',
             ])
 
         </div>

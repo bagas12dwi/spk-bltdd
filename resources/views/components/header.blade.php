@@ -57,6 +57,7 @@
                                 </div>
                             </li>
                             <li>
+                                <a href="{{ route('ubah-password') }}" class="dropdown-item">Ubah Password</a>
                                 <div class="dropdown-divider"></div>
                                 <form id="logout-form" action="{{ route('logout') }}" method="post"
                                     style="display: none;">

@@ -12,7 +12,7 @@
                 @csrf
                 <input type="email" class="form-control" name="email" placeholder="Email">
                 <input type="password" class="form-control" name="password" placeholder="Password">
-                <button type="submit" class="btn btn-sign">Sign In</button>
+                <button type="submit" class="btn btn-sign btn-dark">Sign In</button>
             </form>
         </div>
     </div>
