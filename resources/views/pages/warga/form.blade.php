@@ -25,19 +25,19 @@
                 </div>
 
                 <div class="mb-3">
-                    <label for="tempat_lahir" class="form-label">Tempat Lahir</label>
+                    <label for="tempat_lahir" class="form-label">Tempat Lahir :</label>
                     <input type="text" class="form-control" name="tempat_lahir" id="tempat_lahir"
                         value="{{ old('tempat_lahir', $data->tempat_lahir ?? '') }}" placeholder="Masukkan Tempat Lahir" />
                 </div>
 
                 <div class="mb-3">
-                    <label for="tanggal_lahir" class="form-label">Tanggal Lahir</label>
+                    <label for="tanggal_lahir" class="form-label">Tanggal Lahir :</label>
                     <input type="date" class="form-control" name="tanggal_lahir" id="tanggal_lahir"
                         value="{{ old('tanggal_lahir', $data->tanggal_lahir ?? '') }}" />
                 </div>
 
                 <div class="mb-3">
-                    <label for="alamat" class="form-label">Alamat</label>
+                    <label for="alamat" class="form-label">Alamat :</label>
                     <textarea class="form-control" name="alamat" id="alamat" rows="3">{{ old('alamat', $data->alamat ?? '') }}</textarea>
                 </div>
 

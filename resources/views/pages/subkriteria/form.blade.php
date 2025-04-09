@@ -20,7 +20,7 @@
                 </div>
 
                 <div class="mb-3">
-                    <label for="id_kriteria" class="form-label">Nama Kriteria</label>
+                    <label for="id_kriteria" class="form-label">Nama Kriteria :</label>
                     <select class="form-select" name="id_kriteria" id="id_kriteria">
                         <option disabled selected>Select Kriteria</option>
                         @foreach ($kriterias as $kriteria)

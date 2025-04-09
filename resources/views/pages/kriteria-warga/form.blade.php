@@ -21,7 +21,7 @@
                 <input type="hidden" name="batch" value="{{ $batch ?? 0 }}">
 
                 <div class="mb-3">
-                    <label for="id_data_warga" class="form-label">Nama</label>
+                    <label for="id_data_warga" class="form-label">Nama :</label>
                     <select class="form-select" name="id_data_warga" id="id_data_warga">
                         <option disabled {{ $kriteriaWarga->isEmpty() ? 'selected' : '' }}>Pilih Nama Warga</option>
                         @foreach ($dataWarga as $warga)
